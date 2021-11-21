@@ -114,7 +114,8 @@
 		loop:true,
 		dots: true,
 		nav: true,
-		autoplay: true,
+		autoplay: false,
+		autoHeight:false,
 		margin:30,
 		  responsive:{
 			  0:{
@@ -134,7 +135,8 @@
 		loop:true,
 		dots: true,
 		nav: true,
-		autoplay: true,
+		autoplay: false,
+		autoHeight:false,
 		margin:30,
 		  responsive:{
 			  0:{
@@ -295,7 +297,7 @@
 
         if (visible($('.count-digit'))) {
             if ($('.count-digit').hasClass('counter-loaded')) return;
-            $('.count-digit').addClass('counter-loaded');
+        	$('.count-digit').addClass('counter-loaded');
 
             $('.count-digit').each(function() {
                 var $this = $(this);
