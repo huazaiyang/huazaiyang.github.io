@@ -82,11 +82,11 @@ header, nav, section, article, aside, footer, hgroup {
 html, body {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  background-color: #fff;
   font-size: 16px;
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 a {
@@ -125,7 +125,6 @@ global styles
 */
 html,
 body {
-  background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -893,12 +892,11 @@ upcoming meetings
 */
 
 section.upcoming-meetings {
-  /* background-image: url(../images/meetings-bg.jpg); */
+  background-image: url(../images/meetings-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #444549;
   padding-top: 230px;
   padding-bottom: 110px;
 }
@@ -926,6 +924,7 @@ section.upcoming-meetings .categories h4 {
 section.upcoming-meetings .categories ul li {
   display: inline-block;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 section.upcoming-meetings .categories ul li a {
@@ -1262,12 +1261,27 @@ our facts
 */
 
 section.our-facts {
-  background-image: url(../images/facts-bg.jpg);
+  position: relative;
+  padding: 140px 0px 125px 0px;
+}
+
+section.our-facts::before {
+  content: '';
+  position: absolute;
+  top: -5%; left: -5%;
+  width: 110%; height: 110%;
+  background-image: url(../images/section-fact-bg.jpg);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 140px 0px 125px 0px;
+  filter: grayscale(80%) blur(5px);
+  z-index: -1;
+}
+
+section.our-facts .container {
+  position: relative;
+  z-index: 1;
 }
 
 section.our-facts h2 {
@@ -1311,7 +1325,6 @@ section.our-facts h2 {
 
 section.our-facts .video {
   text-align: center;
-  margin-left: 70px;
   background-image: url(../images/video-item-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
